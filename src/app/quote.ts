@@ -1,5 +1,11 @@
 export class Quote {
-    // id:number,
-    // quotes:string,
-
+    id!: number;
+    quote!: string;
+    upvote!: number;
+    downvote!: number;
+    constructor(id:number, quote:string, upvote:number, downvote:number){
+        // this.id = id,
+        // this.quote = quote,
+        
+    }
 }

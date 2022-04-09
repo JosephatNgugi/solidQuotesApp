@@ -1,9 +1,20 @@
-<h1>{{title}}</h1>
-<div *ngFor=" let quote of userquotes ">
-    <ul>
-        <li>{{quote.quote}}.</li>
-        <li *ngIf="quote.author">
-            <app-quotes-detail [inQuote]="quote"></app-quotes-detail>
-        </li>
-    </ul>
+<div class="container">
+    <div class="row pt-5">
+        <h1 class="col-md-12 text-center">{{title}}</h1>
+        <div class="col-md-6 p-5">
+            <h2 class="text-center">{{title}}</h2>
+            <p class="text-center">Which Quote is your Best.</p>
+            <div *ngFor=" let quote of userquotes ">
+                <cite>{{quote.quote}}.</cite><!-- <li *ngIf="quote.author"> -->
+                    <!-- </li> -->
+                    {{quote.author}}
+                <app-quotes-detail [inQuote]="quote"></app-quotes-detail>
+
+            </div>
+        </div>
+        <div class="col-md-6 text-center p-5">
+            <h2>Form</h2>
+            <p>Add and share Your favourite Quote.</p>
+        </div>
+    </div>
 </div>

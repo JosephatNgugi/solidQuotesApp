@@ -19,9 +19,6 @@ export class QuotesComponent implements OnInit {
     ),
   ];
 
-  toggleDetails(index:number){
-    this.userquotes[index].showAuthor = this.userquotes[index].showAuthor;
-  }
   constructor() {}
 
   ngOnInit(): void {}

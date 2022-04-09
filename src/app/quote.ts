@@ -1,5 +1,4 @@
 export class Quote {
-  showAuthor: boolean;
 
   id: number;
   quote: string;
@@ -20,6 +19,5 @@ export class Quote {
       (this.downvote = downvote),
       (this.author = author);
 
-    this.showAuthor = false;
   }
 }

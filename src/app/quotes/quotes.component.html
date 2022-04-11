@@ -4,13 +4,26 @@
         <div class="col-md-6 p-5">
             <h2 class="text-center">{{title}}</h2>
             <p class="text-center">Which Quote is your Best.</p>
-            <div *ngFor=" let quote of userquotes ">
-                <cite>{{quote.quote}}.</cite><!-- <li *ngIf="quote.author"> -->
-                    <!-- </li> -->
-                    {{quote.author}}
-                <app-quotes-detail [inQuote]="quote"></app-quotes-detail>
-
-            </div>
+            <section *ngFor = "let quote of userquotes">
+                <div *ngIf="quote.upvote == highest && quote.upvote > 0; then highlight else ignore"></div>
+                <ng-template #highlight>
+                        <span appHighlight>
+                            <cite>{{quote.quote}}.</cite><!-- <li *ngIf="quote.author"> -->
+                            <!-- </li> -->
+                            <app-quotes-detail [inQuote]="quote"></app-quotes-detail>
+                            <p> <button>likes</button> {{quote.upvote}} {{quote.downvote}} <button>Dislikes</button></p>
+                        </span>
+                </ng-template>
+                <ng-template #ignore> 
+                        <span>
+                            <cite>{{quote.quote}}.</cite><!-- <li *ngIf="quote.author"> -->
+                            <!-- </li> -->
+                            <app-quotes-detail [inQuote]="quote"></app-quotes-detail>
+                            <p> <button>likes</button> {{quote.upvote}} {{quote.downvote}} <button>Dislikes</button></p>
+                        </span>
+                </ng-template>
+            </section>
+            
         </div>
         <div class="col-md-6 text-center p-5">
             <h2>Form</h2>

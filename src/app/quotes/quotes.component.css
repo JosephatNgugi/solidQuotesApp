@@ -1,0 +1,9 @@
+.box{
+    padding: 3%;
+    text-align: center;
+    background-color: grey;
+    border: 0.5rem solid rgba(204, 245, 255, 0.431);
+    border-radius: 1rem;
+    margin: 2%;
+    
+}

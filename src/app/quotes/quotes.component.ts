@@ -15,16 +15,38 @@ export class QuotesComponent implements OnInit {
       'Courage is not the absence of fear. It is the presence of fear, yet the will to move on',
       0,
       0,
-      'Nelson Mandela'
+      'Nelson Mandela',
+      'Joe Lamas'
     ),
-    new Quote(2, 'QUOTE HERE', 0, 0, 'Author Name'),
-    new Quote(3, 'QUOTE HERE', 0, 0, 'Author Name'),
-    new Quote(4, 'QUOTE HERE', 0, 0, 'Author Name'),
-    new Quote(5, 'QUOTE HERE', 0, 0, 'Author Name'),
+    new Quote(
+      2,
+      'The absence of evidence is not the evidence of absence',
+      0,
+      0,
+      'Dr Carl Sagan',
+      'Joe Lamas'
+    ),
+    new Quote(
+      3,
+      'We cannot solve our problems with the same thinking we used when we created them.',
+      0,
+      0,
+      'Albert Einstein',
+      'Joe Lamas'
+    ),
+    new Quote(4, 'Every villain is a hero of his or her own story', 0, 0, 'Christopher Vogler', 'Joe Lamas'),
+    new Quote(5, 'I asked God for a bike, but I know God doesn\'t work that way. So I stole a bike and asked for forgiveness', 0, 0, 'Emo Philips', 'Joe Lamas'),
   ];
 
-  highestVote: number[] = this.userquotes.map(quoter=>quoter.upvote)
-  highest = Math.max(...this.highestVote)
+  // counter(add:Quote){
+  //   let increamenter = this.userquotes.length;
+  //   add.upvote = increamenter++;
+  //   add.downvote = increamenter++;
+  //   this.userquotes.push(add)
+  // }
+
+  highestVote: number[] = this.userquotes.map((quoter) => quoter.upvote);
+  highest = Math.max(...this.highestVote);
   constructor() {}
 
   ngOnInit(): void {}

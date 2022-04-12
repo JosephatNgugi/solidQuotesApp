@@ -3,24 +3,29 @@
         <h1 class="col-md-12 text-center">{{title}}</h1>
         <div class="col-md-6 p-5">
             <h2 class="text-center">{{title}}</h2>
-            <p class="text-center">Which Quote is your Best.</p>
+            <p class="text-center">{{title}} Section.</p>
             <section *ngFor = "let quote of userquotes">
                 <div *ngIf="quote.upvote == highest && quote.upvote > 0; then highlight else ignore"></div>
                 <ng-template #highlight>
+                    <div class="box">
                         <span appHighlight>
                             <cite>{{quote.quote}}.</cite><!-- <li *ngIf="quote.author"> -->
                             <!-- </li> -->
                             <app-quotes-detail [inQuote]="quote"></app-quotes-detail>
-                            <p> <button>likes</button> {{quote.upvote}} {{quote.downvote}} <button>Dislikes</button></p>
+                            <p> <button class="btn-success" (click)="quote.upvote = quote.upvote + 1" ><i class="fas fa-thumbs-up"></i></button> {{quote.upvote}} {{quote.downvote}} <button class="btn-danger"><i class="fas fa-thumbs-down"></i></button></p>
                         </span>
+                    </div>
                 </ng-template>
-                <ng-template #ignore> 
+                <ng-template #ignore>
+                    <div class="box">
                         <span>
                             <cite>{{quote.quote}}.</cite><!-- <li *ngIf="quote.author"> -->
                             <!-- </li> -->
                             <app-quotes-detail [inQuote]="quote"></app-quotes-detail>
-                            <p> <button>likes</button> {{quote.upvote}} {{quote.downvote}} <button>Dislikes</button></p>
+
+                            <p> <button class="btn-success" (click)="quote.upvote = quote.upvote + 1"><i class="fas fa-thumbs-up"></i></button> {{quote.upvote}} {{quote.downvote}} <button  class="btn-danger"><i class="fas fa-thumbs-down"></i></button></p>
                         </span>
+                    </div>
                 </ng-template>
             </section>
             

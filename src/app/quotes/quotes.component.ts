@@ -34,8 +34,22 @@ export class QuotesComponent implements OnInit {
       'Albert Einstein',
       'Joe Lamas'
     ),
-    new Quote(4, 'Every villain is a hero of his or her own story', 0, 0, 'Christopher Vogler', 'Joe Lamas'),
-    new Quote(5, 'I asked God for a bike, but I know God doesn\'t work that way. So I stole a bike and asked for forgiveness', 0, 0, 'Emo Philips', 'Joe Lamas'),
+    new Quote(
+      4,
+      'Every villain is a hero of his or her own story',
+      0,
+      0,
+      'Christopher Vogler',
+      'Joe Lamas'
+    ),
+    new Quote(
+      5,
+      "I asked God for a bike, but I know God doesn't work that way. So I stole a bike and asked for forgiveness",
+      0,
+      0,
+      'Emo Philips',
+      'Joe Lamas'
+    ),
   ];
 
   // counter(add:Quote){
@@ -48,10 +62,21 @@ export class QuotesComponent implements OnInit {
   highestVote: number[] = this.userquotes.map((quoter) => quoter.upvote);
   highest = Math.max(...this.highestVote);
 
-  addNewQuote(quot:Quote){
+  addNewQuote(quot: Quote) {
     let quotLength = this.userquotes.length;
     quot.id = quotLength + 1;
     this.userquotes.push(quot);
+  }
+
+  deleteQuote(removeQuote: any, index: number) {
+    if (removeQuote) {
+      let toDelete = confirm(
+        `Are you sure you want to delete this quote?`
+      );
+      if (toDelete) {
+        this.userquotes.splice(index, 1);
+      }
+    }
   }
   constructor() {}
 

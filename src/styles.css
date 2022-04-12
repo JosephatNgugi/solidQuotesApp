@@ -4,3 +4,12 @@
     margin: 0;
     box-sizing: border-box;
 }
+section{
+    position: relative;
+}
+.btn-outline-danger{
+    border: none;
+    position: absolute;
+    bottom: 1em;
+    right: 2em;
+}

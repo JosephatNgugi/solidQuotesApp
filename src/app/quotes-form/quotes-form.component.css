@@ -1,0 +1,6 @@
+.form{
+    padding: 2em;
+    background-color: rgba(51, 153, 139, 0.489);
+    border: 0.5em solid rgba(51, 150, 153, 0.215);
+    border-radius: 1em;
+}

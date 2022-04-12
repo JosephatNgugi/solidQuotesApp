@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 import { QuotesComponent } from './quotes/quotes.component';
 import { QuotesDetailComponent } from './quotes/quotes-detail/quotes-detail.component';
 import { HighlightDirective } from './highlight.directive';
+import { QuotesFormComponent } from './quotes-form/quotes-form.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     QuotesComponent,
     QuotesDetailComponent,
-    HighlightDirective
+    HighlightDirective,
+    QuotesFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,7 +3,7 @@
         <h1 class="col-md-12 text-center">{{title}}</h1>
         <div class="col-md-6 p-5">
             <h2 class="text-center">{{title}}</h2>
-            <p class="text-center">{{title}} Section.</p>
+            <p class="text-center">A very wise quote is a spectacular waterfall! When you see it, you feel its power!” </p>
             <section *ngFor = "let quote of userquotes">
                 <div *ngIf="quote.upvote == highest && quote.upvote > 0; then highlight else ignore"></div>
                 <ng-template #highlight>
@@ -12,7 +12,7 @@
                             <cite>{{quote.quote}}.</cite><!-- <li *ngIf="quote.author"> -->
                             <!-- </li> -->
                             <app-quotes-detail [inQuote]="quote"></app-quotes-detail>
-                            <p> <button class="btn-success" (click)="quote.upvote = quote.upvote + 1" ><i class="fas fa-thumbs-up"></i></button> {{quote.upvote}} {{quote.downvote}} <button class="btn-danger"><i class="fas fa-thumbs-down"></i></button></p>
+                            <p> <button class="btn-success" (click)="quote.upvote = quote.upvote + 1" ><i class="fas fa-thumbs-up"></i></button> {{quote.upvote}} {{quote.downvote}} <button class="btn-danger" (click)="quote.downvote = quote.downvote + 1"><i class="fas fa-thumbs-down"></i></button></p>
                         </span>
                     </div>
                 </ng-template>
@@ -23,7 +23,7 @@
                             <!-- </li> -->
                             <app-quotes-detail [inQuote]="quote"></app-quotes-detail>
 
-                            <p> <button class="btn-success" (click)="quote.upvote = quote.upvote + 1"><i class="fas fa-thumbs-up"></i></button> {{quote.upvote}} {{quote.downvote}} <button  class="btn-danger"><i class="fas fa-thumbs-down"></i></button></p>
+                            <p> <button class="btn-success" (click)="quote.upvote = quote.upvote + 1"><i class="fas fa-thumbs-up"></i></button> {{quote.upvote}} {{quote.downvote}} <button  class="btn-danger"(click)="quote.downvote = quote.downvote + 1"><i class="fas fa-thumbs-down"></i></button></p>
                         </span>
                     </div>
                 </ng-template>
@@ -31,8 +31,7 @@
             
         </div>
         <div class="col-md-6 text-center p-5">
-            <h2>Form</h2>
-            <p>Add and share Your favourite Quote.</p>
+        <app-quotes-form (addQuote)="addNewQuote($event)"></app-quotes-form>
         </div>
     </div>
 </div>

@@ -47,6 +47,12 @@ export class QuotesComponent implements OnInit {
 
   highestVote: number[] = this.userquotes.map((quoter) => quoter.upvote);
   highest = Math.max(...this.highestVote);
+
+  addNewQuote(quot:Quote){
+    let quotLength = this.userquotes.length;
+    quot.id = quotLength + 1;
+    this.userquotes.push(quot);
+  }
   constructor() {}
 
   ngOnInit(): void {}

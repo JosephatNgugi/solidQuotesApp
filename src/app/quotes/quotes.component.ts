@@ -52,12 +52,12 @@ export class QuotesComponent implements OnInit {
     ),
   ];
 
-  // counter(add:Quote){
-  //   let increamenter = this.userquotes.length;
-  //   add.upvote = increamenter++;
-  //   add.downvote = increamenter++;
-  //   this.userquotes.push(add)
-  // }
+  counter(add:Quote){
+    let increamenter = this.userquotes.length;
+    add.upvote = increamenter++;
+    add.downvote = increamenter++;
+    this.userquotes.push(add)
+  }
 
   highestVote: number[] = this.userquotes.map((quoter) => quoter.upvote);
   highest = Math.max(...this.highestVote);

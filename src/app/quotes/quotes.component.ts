@@ -62,6 +62,21 @@ export class QuotesComponent implements OnInit {
   highestVote: number[] = this.userquotes.map((quoter) => quoter.upvote);
   highest = Math.max(...this.highestVote);
 
+  preNum!: number;
+  lastNum!: number;
+  counter!: number;
+  likes() {
+    this.preNum = 0;
+    this.lastNum = 0;
+    for (this.counter = 0; this.counter < this.userquotes.length; this.counter++) {
+      this.lastNum = this.userquotes[this.counter].upvote;
+      if (this.lastNum > this.preNum) {
+        this.preNum = this.lastNum;
+      }
+    }
+    return this.preNum;
+  }
+
   addNewQuote(quot: Quote) {
     let quotLength = this.userquotes.length;
     quot.id = quotLength + 1;
@@ -70,9 +85,7 @@ export class QuotesComponent implements OnInit {
 
   deleteQuote(removeQuote: any, index: number) {
     if (removeQuote) {
-      let toDelete = confirm(
-        `Are you sure you want to delete this quote?`
-      );
+      let toDelete = confirm(`Are you sure you want to delete this quote?`);
       if (toDelete) {
         this.userquotes.splice(index, 1);
       }

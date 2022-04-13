@@ -2,7 +2,7 @@
 ### Author: 
 Josephat Ngugi
 ## Description
-This is an app webpage where a user can add a quote and vote for his favourite quote created using Angular CLI.
+This is an app web-page where a user can add a quote and vote for his favorite quote created using Angular CLI.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.1.
 -----
